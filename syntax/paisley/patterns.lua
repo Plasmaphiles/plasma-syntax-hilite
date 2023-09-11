@@ -16,7 +16,7 @@ patterns = {
 
 	--keywords
 	kwd_1 = {
-		pattern = {"for", "in", "if", "elif", "while", "del", "break", "continue"}, --parser auto-detects if it's at a word boundary
+		pattern = {"for", "in", "if", "elif", "while", "delete", "break", "continue"}, --parser auto-detects if it's at a word boundary
 		display = "keyword", --apply coloring from theme.keyword
 		scope = "normal", --change scope (so commands aren't highlighted)
 	},
@@ -64,9 +64,15 @@ patterns = {
 		display = "var_special",
 	},
 
-	set_variable = {
-		pattern = "[%w_]+=",
-		display = "variable",
+	let = {
+		pattern = "let",
+		display = "keyword",
+		scope = "let",
+	},
+
+	equals = {
+		pattern = "=",
+		display = "operator",
 		scope = "normal",
 	},
 

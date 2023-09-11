@@ -15,7 +15,7 @@ scopes = {
 
 	--This is a special scope that is set as the default when a line starts
 	initial = {
-		"set_variable",
+		"let",
 		"command",
 		"param",
 	},
@@ -47,5 +47,10 @@ scopes = {
 		"variable",
 		"var_special",
 		"expr_start",
+	},
+
+	let = {
+		"variable",
+		"equals",
 	},
 }
