@@ -1,12 +1,13 @@
 --Color scheme used to highlight syntax.
 theme = {
-	variable = {"color", "lightblue"},
-	var_special = {{"color", "lightblue"}, {"i"}},
-	escape = {"color", "#8060AB"},
-	string = {"color", "#D6C156"},
-	keyword = {"color", "#D5514C"},
-	syntax = {"color", "#999"},
-	command = {"color", "#2668CF"},
-	operator = {"color", "#CF945D"},
+	variable = {"color", "#d0d0d0"},
+	literal = {"color", "#2580da"},
+	escape = {"color", "#e2c868"},
+	string = {"color", "#ddb13f"},
+	keyword = {"color", "#9654ab"},
+	syntax = {"color", "#aaaaaa"},
+	command = {"color", "#3ac5c2"},
+	operator = {"color", "#6c9dc3"},
+	number = {"color", "#d6b129"},
 	comment = {{"color", "#777"}, {"i"}},
 }

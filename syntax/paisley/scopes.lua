@@ -3,13 +3,13 @@ scopes = {
 	--This is a special scope that is the FIRST one visible when scope stack is empty
 	--This global scope is visible IN ADDITION TO the current scope.
 	global = {
-		"escape_char",
 		"comment",
 		"kwd_1",
 		"kwd_2",
 		"expr_start",
 		"string_start",
 		"string2_start",
+		"inline_command",
 		"endline",
 	},
 
@@ -18,10 +18,10 @@ scopes = {
 		"let",
 		"command",
 		"param",
+		"inline_command",
 	},
 
 	normal = {
-		"pipe_variable",
 		"param",
 	},
 
@@ -29,6 +29,7 @@ scopes = {
 		"string_end",
 		"expr_start",
 		"escape_char",
+		"inline_command",
 	},
 
 	string2 = {
@@ -47,10 +48,19 @@ scopes = {
 		"variable",
 		"var_special",
 		"expr_start",
+		"inline_command",
 	},
 
 	let = {
 		"variable",
 		"equals",
+	},
+
+	inline_cmd = {
+		"expr_start",
+		"string_start",
+		"string2_start",
+		"inline_command",
+		"expr_stop",
 	},
 }
