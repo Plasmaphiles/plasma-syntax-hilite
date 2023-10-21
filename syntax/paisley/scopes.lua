@@ -44,6 +44,7 @@ scopes = {
 		"expr_stop",
 		"operator",
 		"number",
+		"func_call",
 		"constant",
 		"variable",
 		"var_special",

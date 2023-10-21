@@ -1,6 +1,7 @@
 --Color scheme used to highlight syntax.
 theme = {
 	variable = {"color", "#d0d0d0"},
+	special_var = {{"color", "#d0d0d0"}, {"i"}},
 	literal = {"color", "#2580da"},
 	escape = {"color", "#e2c868"},
 	string = {"color", "#ddb13f"},
@@ -10,4 +11,5 @@ theme = {
 	operator = {"color", "#6c9dc3"},
 	number = {"color", "#d6b129"},
 	comment = {{"color", "#777"}, {"i"}},
+	func_call = {"color", "#e2c868"},
 }

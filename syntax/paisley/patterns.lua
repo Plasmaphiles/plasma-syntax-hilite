@@ -46,7 +46,7 @@ patterns = {
 	},
 
 	operator = {
-		pattern = {"and", "or", "not", "xor", "in", "[%+%-%*/%%:#><=]", "~=", "!=", "exists", "like"},
+		pattern = {"and", "or", "not", "xor", "in", "[%+%-%*/%%:#><=,]", "~=", "!=", "exists", "like"},
 		display = "operator",
 	},
 
@@ -57,7 +57,7 @@ patterns = {
 
 	var_special = {
 		pattern = "@",
-		display = "variable",
+		display = "special_var",
 	},
 
 	number = {
@@ -129,5 +129,11 @@ patterns = {
 	string2_end = {
 		pattern = "'",
 		pop = true,
+	},
+
+	func_call = {
+		pattern = "[%w_]+",
+		display = "func_call",
+		lookahead = " *%(",
 	},
 }
