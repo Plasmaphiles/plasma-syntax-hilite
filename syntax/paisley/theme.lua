@@ -12,4 +12,5 @@ theme = {
 	number = {"color", "#d6b129"},
 	comment = {{"color", "#777"}, {"i"}},
 	func_call = {"color", "#e2c868"},
+	label = {"color", "#6c9dc3"},
 }

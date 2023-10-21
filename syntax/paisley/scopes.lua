@@ -6,6 +6,7 @@ scopes = {
 		"comment",
 		"kwd_1",
 		"kwd_2",
+		"kwd_3",
 		"expr_start",
 		"string_start",
 		"string2_start",
@@ -16,9 +17,14 @@ scopes = {
 	--This is a special scope that is set as the default when a line starts
 	initial = {
 		"let",
+		"label",
 		"command",
 		"param",
 		"inline_command",
+	},
+
+	lbl = {
+		"lbl",
 	},
 
 	normal = {
