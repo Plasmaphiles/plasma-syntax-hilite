@@ -16,7 +16,7 @@ patterns = {
 	},
 
 	label = {
-		pattern = "%w+:",
+		pattern = "[a-zA-Z0-9_]+:",
 		display = "label",
 	},
 
@@ -38,7 +38,7 @@ patterns = {
 	},
 
 	lbl = {
-		pattern = "%w+",
+		pattern = "[a-zA-Z0-9_]+",
 		display = "label",
 	},
 
