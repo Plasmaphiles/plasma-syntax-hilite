@@ -12,6 +12,7 @@ patterns = {
 
 	param = {
 		pattern = "[^ \t\n\r\"\'{};$]+", --"
+		display = "variable", --Just use the same color I guess
 	},
 
 	label = {
@@ -84,14 +85,20 @@ patterns = {
 	inline_command = {
 		pattern = "%$%{",
 		display = "syntax",
-		push = "inline_cmd",
+		push = "inl_command",
 	},
 
 	--command names cannot have spaces or equal signs, but any other characters are fine
 	command = {
-		pattern = "[^ =;]+",
+		pattern = "[^ \t\n\r\"\'{};$]+",
 		display = "command",
 		scope = "normal", --change scope to this.
+	},
+
+	inl_command = {
+		pattern = "[^ \t\n\r\"\'{};$]+",
+		display = "command",
+		scope = "inline_cmd", --change scope to this.
 	},
 
 	endline = {

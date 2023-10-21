@@ -56,11 +56,21 @@ scopes = {
 		"equals",
 	},
 
-	inline_cmd = {
+	inl_command = {
+		"expr_stop",
+		"inl_command",
 		"expr_start",
 		"string_start",
 		"string2_start",
 		"inline_command",
+	},
+
+	inline_cmd = {
 		"expr_stop",
+		"param",
+		"expr_start",
+		"string_start",
+		"string2_start",
+		"inline_command",
 	},
 }
