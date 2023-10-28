@@ -53,9 +53,9 @@ scopes = {
 		"func_call",
 		"constant",
 		"variable",
-		"var_special",
 		"expr_start",
 		"inline_command",
+		"var_special",
 	},
 
 	let = {

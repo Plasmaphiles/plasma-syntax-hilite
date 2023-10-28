@@ -66,7 +66,7 @@ patterns = {
 	},
 
 	var_special = {
-		pattern = "@",
+		pattern = "[@%$]",
 		display = "special_var",
 	},
 
