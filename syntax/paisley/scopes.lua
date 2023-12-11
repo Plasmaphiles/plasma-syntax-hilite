@@ -56,6 +56,7 @@ scopes = {
 		"expr_start",
 		"inline_command",
 		"var_special",
+		"lambda",
 	},
 
 	let = {

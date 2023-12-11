@@ -42,6 +42,11 @@ patterns = {
 		display = "label",
 	},
 
+	lambda = {
+		pattern = "!+[a-zA-Z0-9_]*",
+		display = "label",
+	},
+
 	--variables look like {var}, {{var}}, {#var}, {#*}, {*} or any combination thereof
 	expr_start = {
 		pattern = "{",
