@@ -36,6 +36,10 @@ patterns = {
 		display = "keyword",
 		scope = "lbl",
 	},
+	expr_keywords = {
+		pattern = {"if", "else"},
+		display = "keyword",
+	},
 
 	lbl = {
 		pattern = "[a-zA-Z0-9_]+",

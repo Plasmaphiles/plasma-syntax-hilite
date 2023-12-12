@@ -44,6 +44,7 @@ scopes = {
 	},
 
 	expression = {
+		"expr_keywords",
 		"escape_char",
 		"string_start",
 		"string2_start",
