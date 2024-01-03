@@ -15,7 +15,7 @@ patterns = {
 		display = "param", --Just use the same color I guess
 	},
 	param_num = {
-		pattern = {"%d+%.%d*", "%d+"},
+		pattern = {"%d+%.%d*", "%d+", "%.%d+"},
 		display = "number",
 	},
 
