@@ -19,6 +19,7 @@ scopes = {
 		"let",
 		"label",
 		"command",
+		"param_num",
 		"param",
 		"inline_command",
 	},
@@ -28,6 +29,7 @@ scopes = {
 	},
 
 	normal = {
+		"param_num",
 		"param",
 	},
 
@@ -45,6 +47,7 @@ scopes = {
 
 	expression = {
 		"expr_keywords",
+		"expr_keywords2",
 		"escape_char",
 		"string_start",
 		"string2_start",
@@ -76,10 +79,16 @@ scopes = {
 
 	inline_cmd = {
 		"expr_stop",
+		"param_num",
 		"param",
 		"expr_start",
 		"string_start",
 		"string2_start",
 		"inline_command",
+	},
+
+	listcomp = {
+		"listcomp",
+		"variable",
 	},
 }

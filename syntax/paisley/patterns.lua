@@ -12,7 +12,11 @@ patterns = {
 
 	param = {
 		pattern = "[^ \t\n\r\"\'{};$]+", --"
-		display = "variable", --Just use the same color I guess
+		display = "param", --Just use the same color I guess
+	},
+	param_num = {
+		pattern = {"%d+%.%d*", "%d+"},
+		display = "number",
 	},
 
 	label = {
@@ -39,6 +43,16 @@ patterns = {
 	expr_keywords = {
 		pattern = {"if", "else"},
 		display = "keyword",
+	},
+	expr_keywords2 = {
+		pattern = "for",
+		display = "keyword",
+		push = "listcomp",
+	},
+	listcomp = {
+		pattern = "in",
+		display = "keyword",
+		pop = true,
 	},
 
 	lbl = {
