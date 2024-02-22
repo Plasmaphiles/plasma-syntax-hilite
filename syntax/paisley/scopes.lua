@@ -46,6 +46,7 @@ scopes = {
 	},
 
 	expression = {
+		"comment",
 		"expr_keywords",
 		"expr_keywords2",
 		"escape_char",

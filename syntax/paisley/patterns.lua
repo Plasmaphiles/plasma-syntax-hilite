@@ -79,7 +79,7 @@ patterns = {
 	},
 
 	operator = {
-		pattern = {"and", "or", "not", "xor", "in", "[%+%-%*/%%:#><=,]", "~=", "!=", "exists", "like"},
+		pattern = {"and", "or", "not", "xor", "in", "[%+%-%*/%%:&><=,]", "~=", "!=", "exists", "like"},
 		display = "operator",
 	},
 
@@ -94,7 +94,7 @@ patterns = {
 	},
 
 	number = {
-		pattern = {"0[xb][0-9%._a-fA-F]*", "[0-9%.][0-9%._a-zA-Z]*"},
+		pattern = {"0[xb][0-9_a-fA-F]*", "[0-9]*%.[0-9]+", "[0-9]+"},
 		display = "number",
 	},
 
