@@ -65,11 +65,13 @@ scopes = {
 	},
 
 	let = {
+		"expr_start",
 		"variable",
 		"equals",
 	},
 
 	inl_command = {
+		"kwd_3",
 		"expr_stop",
 		"inl_command",
 		"expr_start",

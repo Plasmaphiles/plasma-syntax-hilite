@@ -26,7 +26,7 @@ patterns = {
 
 	--keywords
 	kwd_1 = {
-		pattern = {"for", "in", "if", "elif", "while", "delete", "break", "continue", "define"}, --parser auto-detects if it's at a word boundary
+		pattern = {"for", "in", "if", "elif", "while", "delete", "break", "continue", "define", "match"}, --parser auto-detects if it's at a word boundary
 		display = "keyword", --apply coloring from theme.keyword
 		scope = "normal", --change scope (so commands aren't highlighted)
 	},
@@ -104,7 +104,7 @@ patterns = {
 	},
 
 	let = {
-		pattern = "let",
+		pattern = {"let", "initial"},
 		display = "keyword",
 		scope = "let",
 	},
@@ -123,13 +123,13 @@ patterns = {
 
 	--command names cannot have spaces or equal signs, but any other characters are fine
 	command = {
-		pattern = "[^ \t\n\r\"\'{};$]+",
+		pattern = "[^ \t\n\r\"\'{};$#]+",
 		display = "command",
 		scope = "normal", --change scope to this.
 	},
 
 	inl_command = {
-		pattern = "[^ \t\n\r\"\'{};$]+",
+		pattern = "[^ \t\n\r\"\'{};$#]+",
 		display = "command",
 		scope = "inline_cmd", --change scope to this.
 	},
