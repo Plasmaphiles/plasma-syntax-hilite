@@ -7,6 +7,7 @@ scopes = {
 		"kwd_1",
 		"kwd_2",
 		"kwd_3",
+		"kwd_4",
 		"expr_start",
 		"string_start",
 		"string2_start",
@@ -26,6 +27,10 @@ scopes = {
 
 	lbl = {
 		"lbl",
+	},
+
+	lbl2 = {
+		"lbl2",
 	},
 
 	normal = {

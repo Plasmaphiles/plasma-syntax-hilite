@@ -31,7 +31,7 @@ patterns = {
 		scope = "normal", --change scope (so commands aren't highlighted)
 	},
 	kwd_2 = {
-		pattern = {"do", "then", "else", "end", "subroutine", "return", "stop"},
+		pattern = {"do", "then", "else", "end", "return", "stop"},
 		display = "keyword",
 		scope = "initial",
 	},
@@ -39,6 +39,11 @@ patterns = {
 		pattern = "gosub",
 		display = "keyword",
 		scope = "lbl",
+	},
+	kwd_4 = {
+		pattern = "subroutine",
+		display = "keyword",
+		push = "lbl2",
 	},
 	expr_keywords = {
 		pattern = {"if", "else"},
@@ -58,6 +63,12 @@ patterns = {
 	lbl = {
 		pattern = "[a-zA-Z0-9_]+",
 		display = "label",
+	},
+
+	lbl2 = {
+		pattern = "[a-zA-Z0-9_]+",
+		display = "label",
+		pop = true,
 	},
 
 	lambda = {
