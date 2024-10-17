@@ -21,7 +21,7 @@ patterns = {
 
 	label = {
 		pattern = "[a-zA-Z0-9_]+:",
-		display = "label",
+		display = "special_functions",
 	},
 
 	--keywords
@@ -62,30 +62,30 @@ patterns = {
 
 	lbl = {
 		pattern = "[a-zA-Z0-9_]+",
-		display = "label",
+		display = "special_functions",
 	},
 
 	lbl2 = {
 		pattern = "[a-zA-Z0-9_]+",
-		display = "label",
+		display = "special_functions",
 		pop = true,
 	},
 
 	lambda = {
 		pattern = "!+[a-zA-Z0-9_]*",
-		display = "label",
+		display = "special_functions",
 	},
 
 	--variables look like {var}, {{var}}, {#var}, {#*}, {*} or any combination thereof
 	expr_start = {
 		pattern = "{",
-		display = "syntax",
+		display = "punctuation",
 		push = "expression",
 	},
 
 	expr_stop = {
 		pattern = "}",
-		display = "syntax",
+		display = "punctuation",
 		pop = true,
 	},
 
@@ -128,26 +128,26 @@ patterns = {
 
 	inline_command = {
 		pattern = "%$%{",
-		display = "syntax",
+		display = "punctuation",
 		push = "inl_command",
 	},
 
 	--command names cannot have spaces or equal signs, but any other characters are fine
 	command = {
 		pattern = "[^ \t\n\r\"\'{};$#]+",
-		display = "command",
+		display = "object",
 		scope = "normal", --change scope to this.
 	},
 
 	inl_command = {
 		pattern = "[^ \t\n\r\"\'{};$#]+",
-		display = "command",
+		display = "object",
 		scope = "inline_cmd", --change scope to this.
 	},
 
 	endline = {
-		pattern = ";",
-		display = "syntax",
+		pattern = "[;\n]",
+		display = "punctuation",
 		scope = "initial",
 	},
 
@@ -175,9 +175,9 @@ patterns = {
 		pop = true,
 	},
 
-	func_call = {
+	functions = {
 		pattern = "[%w_]+",
-		display = "func_call",
+		display = "functions",
 		lookahead = " *%(",
 	},
 }

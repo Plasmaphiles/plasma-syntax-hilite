@@ -33,7 +33,7 @@ patterns = {
 
 	typename = {
 		pattern = {"true", "false", "nil"},
-		display = "typename",
+		display = "literal",
 	},
 
 	operator = {

@@ -43,13 +43,15 @@ end
 --TIDY UP SYNTAX PATTERNS
 --This step makes patterns behave more nicely with lua's pattern matching
 for key, value in pairs(patterns) do
-	if type(value.pattern) ~= "table" then
-		value.pattern = {value.pattern}
+	if value then
+		if type(value.pattern) ~= "table" then
+			value.pattern = {value.pattern}
+		end
+		for i, p in pairs(value.pattern) do
+			value.pattern[i] = "^"..p
+		end
+		if value.lookahead ~= nil then value.lookahead = "^" .. value.lookahead end
 	end
-	for i, p in pairs(value.pattern) do
-		value.pattern[i] = "^"..p
-	end
-	if value.lookahead ~= nil then value.lookahead = "^" .. value.lookahead end
 end
 
 --returns scope_name, match_text
@@ -59,19 +61,21 @@ function check_scope(text, scope)
 	local p
 	local match
 	for _, s in pairs(scope) do
-		for _, p in pairs(patterns[s].pattern) do
-			match = text:match(p)
-			if match ~= nil then
-				--Auto-detect word boundaries.
-				--We don't want keywords to detect greedily.
-				local lookahead_ok = true
-				if patterns[s].lookahead ~= nil then
-					if text:sub(#match+1, #text):match(patterns[s].lookahead) == nil then
-						lookahead_ok = false
+		if patterns[s] then
+			for _, p in pairs(patterns[s].pattern) do
+				match = text:match(p)
+				if match ~= nil then
+					--Auto-detect word boundaries.
+					--We don't want keywords to detect greedily.
+					local lookahead_ok = true
+					if patterns[s].lookahead ~= nil then
+						if text:sub(#match+1, #text):match(patterns[s].lookahead) == nil then
+							lookahead_ok = false
+						end
 					end
-				end
-				if lookahead_ok and (patterns[s].greedy == true or text:sub(#match, #match+1):match("[%w_][%w_]") == nil) then
-					return s, match
+					if lookahead_ok and (patterns[s].greedy == true or text:sub(#match, #match+1):match("[%w_][%w_]") == nil) then
+						return s, match
+					end
 				end
 			end
 		end
@@ -100,6 +104,7 @@ function PROCESS(text, line_no)
 	local result = ""
 	local prev_pattern = {}
 	local index = 1
+	local t
 
 	if line_no == current_line and cursor_pos == 0 then
 		result = cursor
@@ -128,7 +133,7 @@ function PROCESS(text, line_no)
 			--we found a matching pattern within the current scope!
 			local pattern = patterns[pattern_name]
 
-			if pattern.display ~= nil then
+			if pattern.display and theme[pattern.display] then
 				result = result .. theme[pattern.display].open
 			end
 
@@ -144,15 +149,15 @@ function PROCESS(text, line_no)
 				table.insert(scope_stack, scope)
 				table.insert(prev_pattern, pattern)
 				scope = scopes[pattern.push]
-			elseif pattern.display ~= nil then
+			elseif pattern.display and theme[pattern.display] then
 				result = result .. theme[pattern.display].close
 			end
 
 			if pattern.pop == true and #scope_stack > 0 then
 				--pop a scope off the stack
 				scope = table.remove(scope_stack)
-				prev = table.remove(prev_pattern)
-				if prev.display ~= nil then
+				local prev = table.remove(prev_pattern)
+				if prev.display and theme[prev.display] then
 					result = result .. theme[prev.display].close
 				end
 			end
@@ -164,8 +169,8 @@ function PROCESS(text, line_no)
 	--Pop all scopes at the end, just in case
 	while #scope_stack > 0 do
 		scope = table.remove(scope_stack)
-		prev = table.remove(prev_pattern)
-		if prev.display ~= nil then
+		local prev = table.remove(prev_pattern)
+		if prev.display and theme[prev.display] then
 			result = result .. theme[prev.display].close
 		end
 	end

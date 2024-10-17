@@ -60,7 +60,7 @@ scopes = {
 		"expr_stop",
 		"operator",
 		"number",
-		"func_call",
+		"functions",
 		"constant",
 		"variable",
 		"expr_start",
