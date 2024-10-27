@@ -6,7 +6,7 @@ patterns = {
 	},
 
 	literal = {
-		pattern = {"true", "false", "nil"},
+		pattern = {"true", "false", "null"},
 		display = "literal",
 	},
 
