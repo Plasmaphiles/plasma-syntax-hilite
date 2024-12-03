@@ -5,17 +5,17 @@ patterns = {
 	},
 
 	escape_char = {
-		pattern = {"\\[nt\"\'\\r %{%}]","\\%^%-%^","\\:relaxed:","\\:P","\\:yum:","\\<3","\\:heart_eyes:","\\B%)","\\:sunglasses:","\\:D","\\:grinning:","\\%^o%^","\\:smile:","\\XD","\\:laughing:","\\:lol:","\\=D","\\:smiley:","\\:sweat_smile:","\\DX","\\:tired_face:","\\;P","\\:stuck_out_tongue_winking_eye:","\\:%-%*","\\;%-%*","\\:kissing_heart:","\\:kissing:","\\:rofl:","\\:%)","\\:slight_smile:","\\:%(","\\:frown:","\\:frowning:"},
+		pattern = { "\\[nt\"\'\\r %{%}]", "\\%^%-%^", "\\:relaxed:", "\\:P", "\\:yum:", "\\<3", "\\:heart_eyes:", "\\B%)", "\\:sunglasses:", "\\:D", "\\:grinning:", "\\%^o%^", "\\:smile:", "\\XD", "\\:laughing:", "\\:lol:", "\\=D", "\\:smiley:", "\\:sweat_smile:", "\\DX", "\\:tired_face:", "\\;P", "\\:stuck_out_tongue_winking_eye:", "\\:%-%*", "\\;%-%*", "\\:kissing_heart:", "\\:kissing:", "\\:rofl:", "\\:%)", "\\:slight_smile:", "\\:%(", "\\:frown:", "\\:frowning:" },
 		display = "escape",
 		greedy = true,
 	},
 
 	param = {
 		pattern = "[^ \t\n\r\"\'{};$]+", --"
-		display = "param", --Just use the same color I guess
+		display = "param",         --Just use the same color I guess
 	},
 	param_num = {
-		pattern = {"%d+%.%d*", "%d+", "%.%d+"},
+		pattern = { "%d+%.%d*", "%d+", "%.%d+" },
 		display = "number",
 	},
 
@@ -26,17 +26,20 @@ patterns = {
 
 	--keywords
 	kwd_1 = {
-		pattern = {"for", "in", "if", "elif", "while", "delete", "break", "continue", "define", "match"}, --parser auto-detects if it's at a word boundary
-		display = "keyword", --apply coloring from theme.keyword
-		scope = "normal", --change scope (so commands aren't highlighted)
+		--parser auto-detects if it's at a word boundary
+		pattern = { "for", "in", "if", "elif", "while", "delete", "break", "cache", "continue", "define", "match" },
+		--apply coloring from theme.keyword
+		display = "keyword",
+		--change scope (so commands aren't highlighted)
+		scope = "normal",
 	},
 	kwd_2 = {
-		pattern = {"do", "then", "else", "end", "return", "stop"},
+		pattern = { "do", "then", "else", "end", "return", "stop" },
 		display = "keyword",
 		scope = "initial",
 	},
 	kwd_3 = {
-		pattern = "gosub",
+		pattern = { "gosub", "break[ \\t]+cache" },
 		display = "keyword",
 		scope = "lbl",
 	},
@@ -46,7 +49,7 @@ patterns = {
 		push = "lbl2",
 	},
 	expr_keywords = {
-		pattern = {"if", "else"},
+		pattern = { "if", "else" },
 		display = "keyword",
 	},
 	expr_keywords2 = {
@@ -90,32 +93,32 @@ patterns = {
 	},
 
 	operator = {
-		pattern = {"and", "or", "not", "xor", "in", "[%+%-%*/%%:&><=,]", "~=", "!=", "exists", "like"},
+		pattern = { "and", "or", "not", "xor", "in", "[%+%-%*/%%:&><=,]", "~=", "!=", "exists", "like" },
 		display = "operator",
 	},
 
 	variable = {
-		pattern = {"[a-zA-Z_][a-zA-Z_0-9]*"},
+		pattern = { "[a-zA-Z_][a-zA-Z_0-9]*" },
 		display = "variable",
 	},
 
 	var_special = {
-		pattern = "[@%$]",
+		pattern = { "%$", "@%d*" },
 		display = "special_var",
 	},
 
 	number = {
-		pattern = {"0[xb][0-9_a-fA-F]*", "[0-9]*%.[0-9]+", "[0-9]+"},
+		pattern = { "0[xb][0-9_a-fA-F]*", "[0-9]*%.[0-9]+", "[0-9]+" },
 		display = "number",
 	},
 
 	constant = {
-		pattern = {"true", "false", "null"},
+		pattern = { "true", "false", "null" },
 		display = "literal",
 	},
 
 	let = {
-		pattern = {"let", "initial"},
+		pattern = { "let", "initial" },
 		display = "keyword",
 		scope = "let",
 	},

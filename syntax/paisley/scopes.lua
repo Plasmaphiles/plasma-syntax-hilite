@@ -4,9 +4,9 @@ scopes = {
 	--This global scope is visible IN ADDITION TO the current scope.
 	global = {
 		"comment",
+		"kwd_3",
 		"kwd_1",
 		"kwd_2",
-		"kwd_3",
 		"kwd_4",
 		"expr_start",
 		"string_start",
