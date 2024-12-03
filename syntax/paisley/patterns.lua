@@ -41,12 +41,12 @@ patterns = {
 	kwd_3 = {
 		pattern = { "gosub", "break[ \\t]+cache" },
 		display = "keyword",
-		scope = "lbl",
+		push = "lbl",
 	},
 	kwd_4 = {
 		pattern = "subroutine",
 		display = "keyword",
-		push = "lbl2",
+		push = "lbl",
 	},
 	expr_keywords = {
 		pattern = { "if", "else" },
@@ -64,11 +64,6 @@ patterns = {
 	},
 
 	lbl = {
-		pattern = "[a-zA-Z0-9_]+",
-		display = "special_functions",
-	},
-
-	lbl2 = {
 		pattern = "[a-zA-Z0-9_]+",
 		display = "special_functions",
 		pop = true,
