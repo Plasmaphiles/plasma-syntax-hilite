@@ -60,7 +60,7 @@ function check_scope(text, scope)
 	local s
 	local p
 	local match
-	for _, s in pairs(scope) do
+	for _, s in pairs(scope or {}) do
 		if patterns[s] then
 			for _, p in pairs(patterns[s].pattern) do
 				match = text:match(p)
