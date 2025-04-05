@@ -39,6 +39,7 @@ scopes = {
 	},
 
 	string = {
+		"string_tag_break",
 		"string_end",
 		"expr_start",
 		"escape_char",
@@ -46,6 +47,7 @@ scopes = {
 	},
 
 	string2 = {
+		"string_tag_break",
 		"string2_end",
 		"escape_char",
 	},

@@ -173,6 +173,12 @@ patterns = {
 		pop = true,
 	},
 
+	--Just break up text tags
+	string_tag_break = {
+		pattern = "<",
+		display = "string",
+	},
+
 	functions = {
 		pattern = {"[%w_]+", "\\[^ \t\n\r\"\'{}();$#]+"},
 		display = "functions",
