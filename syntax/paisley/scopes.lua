@@ -23,6 +23,7 @@ scopes = {
 		"param_num",
 		"param",
 		"inline_command",
+		"directive",
 	},
 
 	lbl = {

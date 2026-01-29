@@ -184,4 +184,9 @@ patterns = {
 		display = "functions",
 		lookahead = " *%(",
 	},
+
+	directive = {
+		pattern = "%$[^%$;\n]+%$?",
+		display = "keyword",
+	},
 }
